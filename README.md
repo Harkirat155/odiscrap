@@ -2,8 +2,10 @@
 
 packages needed:
 
-scrapy(pip install scrapy
-beautifulsoup(pip install beautifulsoup)
+scrapy(pip install Scrapy)
+
+beautifulsoup(pip install beautifulsoup4)
+
 json
 
 to see data from pre-existent json files:
