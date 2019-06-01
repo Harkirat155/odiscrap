@@ -6,7 +6,7 @@ scrapy(pip install Scrapy)
 
 beautifulsoup(pip install beautifulsoup4)
 
-json
+json(in-built package)
 
 to see data from pre-existent json files(keep all files in tact within the same folder):
 ./run.sh
