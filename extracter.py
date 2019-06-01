@@ -25,6 +25,12 @@ def check(runs):
     except:
         return 'error'
 
+def check(runs):
+    try:
+        int(runs)
+    except:
+        return 'error'
+
 def detcall(url):
     r = requests.get(url)
     soup = BeautifulSoup(r.text, 'html.parser')
@@ -41,6 +47,7 @@ def detcall(url):
     result3=result3[1:]
 
     #check run
+    runwrapcheck=False
     siblingres=[]
     for sibling in result3[0].td.next_siblings:
         siblingres.append(repr(sibling))
@@ -52,7 +59,10 @@ def detcall(url):
     end=runyeartag.find('</td>')
     runsres=runyeartag[start+4: end]
     if (check(runsres) == 'error'):
-        runyeartagind=7
+        if('nowrap' in runsres):
+            runwrapcheck=True
+        else:
+            runyeartagind=7
 #        print('changed',runyeartagind)
 
     dictres={}
@@ -77,6 +87,7 @@ def detcall(url):
         dictres[yearres]=runsres
 
     return dictres
+
 
 final_res={}
 
